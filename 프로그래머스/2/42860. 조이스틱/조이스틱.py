@@ -1,4 +1,5 @@
 def solution(name):
+    # name = 'BNAAYAAAZ'
 # 조이스틱 조작 횟수 
     answer = 0
 
@@ -17,10 +18,13 @@ def solution(name):
         while next < len(name) and name[next] == 'A':
             # 사이 값 진행
             next += 1
-        print(next)
-
+        
+        print('i:',i, 'next:',next)
+        print('minmove:',min_move,'오왼넘',2*i + len(name) - next, '왼쭉:',i + 2 * (len(name) - next))
         min_move = min(min_move, 2 *i + len(name) - next, i + 2 * (len(name) - next))
+        print('최종min_move:', min_move)
 
     # 알파벳 변경(상하이동) 횟수에 좌우이동 횟수 추가
+    
     answer += min_move
     return answer
