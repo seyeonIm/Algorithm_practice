@@ -1,28 +1,19 @@
 def solution(word):
-    vowels = ['A','E','I','O','U']
-    cnt = 0
+    answer = 0
+    vowels = ['A', 'E', 'I', 'O', 'U']
+    words = []
 
     for a in vowels:
-        s1 = a
-        cnt += 1
-        if s1 == word: return cnt
-
+        words.append(a)
         for b in vowels:
-            s2 = s1 + b
-            cnt += 1
-            if s2 == word: return cnt
-
+            words.append(a+b)
             for c in vowels:
-                s3 = s2 + c
-                cnt += 1
-                if s3 == word: return cnt
-
+                words.append(a+b+c)
                 for d in vowels:
-                    s4 = s3 + d
-                    cnt += 1
-                    if s4 == word: return cnt
-
+                    words.append(a+b+c+d)
                     for e in vowels:
-                        s5 = s4 + e
-                        cnt += 1
-                        if s5 == word: return cnt
+                        words.append(a+b+c+d+e)
+                        
+    print(words)
+    answer = words.index(word) + 1
+    return answer
