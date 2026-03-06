@@ -1,5 +1,17 @@
 from collections import deque
 
+def solution(begin, target, words):
+    answer = bfs(begin, target, words)
+    
+
+    return answer
+
+
+        
+        
+
+from collections import deque
+
 def bfs(begin, target, words):
     queue = deque()
     queue.append((begin, 0)) # 처음단어, 전환수
